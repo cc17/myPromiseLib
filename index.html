@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript" src="EasyPromise.js"></script>
+<script type="text/javascript">
+	(function(){
+		function async1(){
+			var p = new EasyPromise();
+			setTimeout(function(){
+				p.resolve(1);
+			},2000);
+			return p;
+		};
+
+		async1().then(function(data){
+			console.log(data == 1);
+		});
+	})();
+</script>
+</body>
+</html>
