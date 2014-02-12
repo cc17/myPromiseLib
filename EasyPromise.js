@@ -20,7 +20,11 @@
 				this._callbacks.push(function() {
 					//此时apply context很重要，否则，res中的实例获取不到this
 					var res = func.apply(context, arguments);
-					if (res && typeof res.then === 'function') res.then(p.resolve, p);
+					if (res && typeof res.then === 'function') {
+						res.then(p.resolve, p);
+					}else{
+						p.resolve();
+					};
 				});
 			}
 			return p;
