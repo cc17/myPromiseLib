@@ -23,7 +23,7 @@
 					if (res && typeof res.then === 'function') {
 						res.then(p.resolve, p);
 					}else{
-						p.resolve();
+						p.resolve(res);
 					};
 				});
 			}
